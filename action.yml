@@ -1,0 +1,27 @@
+name: 'bioinfo-action'
+description: 'Set up Conda with Bioconda channel and R'
+author: 'yangwu91'
+branding:
+  icon: 'circle'
+  color: 'green'
+inputs:
+  mirror:
+    description: 'Define a mirror website [bfsu/tsinghua/ustc] or leave it default. Other than these, please let me know and add it.'
+    required: false
+    default: 'bfsu'
+  channels:
+    description: 'Add custom Conda channels'
+    required: false
+  packages:
+    description: 'Install Conda packages'
+    required: false
+  cmd:
+    description: 'Run commands'
+    required: false
+  args:
+    description: 'Pass one command line to the bioconda-action'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

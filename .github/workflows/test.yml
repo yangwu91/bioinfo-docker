@@ -1,0 +1,22 @@
+name: Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Bioconda
+        uses: ./
+        with:
+          cmd: 'bowtie2 --help; samtools --version'
+          args: 'conda info'
+      - name: Use other Conda channel
+        uses: ./
+        with:
+          mirror: 'default'
+          channels: 'yangwu91'
+          packages: 'r2g'
+          cmd: 'r2g --version'
+          args: 'conda info'
