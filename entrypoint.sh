@@ -37,7 +37,7 @@ function run_cmd() {
 }
 
 function start_jupyterlab() {
-    jupyter-lab --ip 0.0.0.0 --no-browser &
+    /opt/miniconda3/bin/jupyter-lab --ip 0.0.0.0 --no-browser --allow-root &
     /usr/lib/rstudio-server/bin/rserver &
 }
 
