@@ -36,6 +36,11 @@ function run_cmd() {
     fi
 }
 
+function start_jupyterlab() {
+    jupyter-lab --ip 0.0.0.0 --no-browser &
+    /usr/lib/rstudio-server/bin/rserver &
+}
+
 function main() {
     if (( $# != 0 )); then
         $@
@@ -48,4 +53,5 @@ set_mirrors
 add_channels
 install_packages
 run_cmd
+start_jupyterlab
 main $@
