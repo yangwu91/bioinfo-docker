@@ -62,3 +62,4 @@ jobs:
           cmd: 'r2g --version; diamond --version'
           args: 'conda info'
 ```
+
