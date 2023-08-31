@@ -16,10 +16,10 @@ RUN apt update -qyy && \
     wget -qO /tmp/miniconda3.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
     bash /tmp/miniconda3.sh -bfp /opt/miniconda3 && \
     conda config --add channels defaults && \
-	conda config --add channels bioconda && \
-	conda config --add channels conda-forge && \
+    conda config --add channels bioconda && \
+    conda config --add channels conda-forge && \
     conda update -y --all && \
-    conda install -qy python=3.10 r-base=4 conda-build conda-verify requests numpy scipy pandas future beautifulsoup4 biopython matplotlib tqdm samtools bowtie2 bedtools bwa hisat2 blast fastqc minimap2 jupyterlab r-ggplot2 r-tidyverse bioconductor-edger bioconductor-deseq2 && \
+    conda install -qy python=3.11 r-base=4 conda-build conda-verify requests numpy scipy pandas future beautifulsoup4 biopython matplotlib tqdm samtools bowtie2 bedtools bwa hisat2 blast fastqc minimap2 jupyterlab r-ggplot2 r-tidyverse bioconductor-edger bioconductor-deseq2 && \
     wget -qO /tmp/rstudio-server.deb ${RSTUDIO_URL} && \
     gdebi -qn /tmp/rstudio-server.deb && \
     apt autoremove -qyy && \
