@@ -7,7 +7,7 @@ This is a Docker image with Bioinformatics utilities preinstalled, enjoy!
 
 ### Environments
 
-* Python=3.10
+* Python=3.11
 * R=4
 * Built on the latest ubuntu:focal docker
 * Used [the BFSU mirror](https://mirrors.bfsu.edu.cn) as default
@@ -17,7 +17,7 @@ This is a Docker image with Bioinformatics utilities preinstalled, enjoy!
   * bowtie2
   * bedtools
   * bwa
-  * hisat2
+  * ~~hisat2~~
   * blast
   * fastqc
   * minimap2
