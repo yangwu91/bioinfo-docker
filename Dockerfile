@@ -1,6 +1,6 @@
 FROM ubuntu:jammy
 
-MAINTAINER wuyang@drwu.ga
+MAINTAINER wuyang@drwuyang.top
 
 COPY mirrors/* /tmp/
 COPY entrypoint.sh /entrypoint.sh
@@ -8,7 +8,7 @@ COPY entrypoint.sh /entrypoint.sh
 ENV PATH="/opt/miniconda3/bin:$PATH"
 ENV TZ="Asia/Hong_Kong"
 ENV DEBIAN_FRONTEND="noninteractive"
-ENV RSTUDIO_URL="https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.12.0-353-amd64.deb"
+ENV RSTUDIO_URL="https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.12.0-369-amd64.deb"
 
 RUN apt update -qyy && \
     apt upgrade -qyy && \
@@ -19,7 +19,7 @@ RUN apt update -qyy && \
     conda config --add channels bioconda && \
     conda config --add channels conda-forge && \
     conda update -y --all && \
-    conda install -qy python=3.11 r-base=4 conda-build conda-verify requests numpy scipy pandas future beautifulsoup4 biopython matplotlib tqdm samtools bowtie2 bedtools bwa hisat2 blast fastqc minimap2 jupyterlab r-ggplot2 r-tidyverse bioconductor-edger bioconductor-deseq2 && \
+    conda install -qy python=3.11 r-base=4 conda-build conda-verify requests numpy scipy pandas future beautifulsoup4 biopython matplotlib tqdm samtools bowtie2 bedtools bwa blast fastqc minimap2 jupyterlab r-ggplot2 r-tidyverse bioconductor-edger bioconductor-deseq2 && \
     wget -qO /tmp/rstudio-server.deb ${RSTUDIO_URL} && \
     gdebi -qn /tmp/rstudio-server.deb && \
     apt autoremove -qyy && \
