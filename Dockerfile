@@ -23,8 +23,8 @@ RUN apt update -qyy && \
     conda install -qy python=3.11 r-base=4 conda-build conda-verify requests numpy scipy pandas future beautifulsoup4 biopython matplotlib tqdm samtools bedtools bwa blast fastqc minimap2 jupyterlab r-ggplot2 r-tidyverse bioconductor-edger bioconductor-deseq2 && \
     wget -qO /tmp/bowtie2.zip ${BT2_URL} && \
     unzip /tmp/bowtie2.zip && \
-    find ./ -type f -name "bowtie2*" | xargs -i {} mv {} /usr/bin/ && \
-    chmod +x /usr/bin/bowtie2* && \
+    mv bowtie2*/bowtie* /usr/bin/ && \
+    chmod +x /usr/bin/bowtie* && \
     wget -qO /tmp/rstudio-server.deb ${RSTUDIO_URL} && \
     gdebi -qn /tmp/rstudio-server.deb && \
     apt autoremove -qyy && \
