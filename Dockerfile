@@ -6,7 +6,7 @@ COPY mirrors/* /tmp/
 COPY entrypoint.sh /entrypoint.sh
 
 ENV PATH="/opt/miniconda3/bin:$PATH"
-ENV TZ="Asia/Hong_Kong"
+ENV TZ="Asia/Singapore"
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV RSTUDIO_URL="https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.12.0-369-amd64.deb"
 ENV BT2_URL="https://github.com/BenLangmead/bowtie2/releases/download/v2.5.2/bowtie2-2.5.2-linux-x86_64.zip"
